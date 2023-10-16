@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Opiniones - Terminos y condiciones</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Terminos y condiciones de Opiniones!. Expresa tu punto de vista,
+	sin que nadie pueda censurarte. Comparte tu opinion atraves de todas
+	tus redes sociales. Sube de rango y personaliza tus opiniones con diseños exclusivos
+	Muestra al mundo tu opinion con un estilo unico y personal.  ">
+	<meta name="keywords" content="social, opinion, opiniones, puntos de vista">
+	<meta name="author" content="Sebastian Cabeza">
+	<link rel="shortcut icon" href="/img/opiniones_icono.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" href="node_modules/bootstrap/css/bootstrap.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="node_modules/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src = "js/getUsername.js"></script>
+	<link rel="stylesheet" href="/css/img_effects.css" type="text/css">
+
+</head>
+
+	<body class="bg-dark"  >
+
+		<header>
+			<!--	<nav class="navbar sticky-top navbar-dark bg-secondary  ">
+		    		<img src="/Opiniones/img/nombreweb.png" width="126" height="50" class="d-inline-block align-left" alt="Op!" loading="lazy"></a>
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal" >	<img src="/Opiniones/img/opiniones_login.png" width="55" height="27" class="d-inline-block align-left" alt=" Crear Op!" loading="lazy"></a></button>
+																											<form class="form-inline" >
+			    																						<input class="form-control" type="search" placeholder="Search" aria-label="Search"></input>
+			    																					<button class="btn btn-outline-primary" type="submit">Buscar</button>
+			  																				</form>
+																							<button id="user"  class=" btn-inline btn-danger btn-sm  " type="button" ></button>
+
+				</nav> -->
+
+			<!--	<nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
+					<a class="navbar-brand mt-0 mb-0" href="#" id="asd">
+			 				 <img src="/Opiniones/img/nombreweb.png" width="100" height="40" class="d-inline-block align-top" alt="Opiniones" loading="lazy">
+		 				</a>
+							<form class="form-inline ">
+		    				<button class="btn btn-dark  btn-sm mr-5" type="button" data-toggle="modal" data-target="#exampleModal" ><img src="/Opiniones/img/crear_op.png" width="80" height="25" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></button>
+								<input class="form-control mr-sm-2 pl-2" type="search" placeholder="Search" aria-label="Search">
+		      			<button class="btn btn-primary my-2 my-sm-0 pr-3" type="submit">Search</button>
+									<button class="btn btn-primary ml-5" type="button" id="user">ingresar</button>
+		  				</form>
+
+
+				</nav> -->
+				<nav class="navbar  navbar-expand-lg navbar-light bg-secondary" >
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+						<a class="navbar-brand imagen" href="index.html"> <img src="/img/opiniones_login.png" width="90" height="40" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></a>
+
+						<form class="form-inline my-2 my-lg-0">
+							<!--<button class="btn btn-dark  btn-sm  mr-5" type="button" data-toggle="modal" data-target="#crearCommentModal" id="botonOpinion" ><img src="/Opiniones/img/crear_op.png" width="80" height="20" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></button>
+							<input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search"></input>
+							<button class="btn btn-dark my-2 btn-sm my-sm-0  " type="submit"><img src="/Opiniones/img/buscar.png" width="70" height="18" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></button> -->
+
+							<div class="btn-group btn-sm  ">
+								<a class="imagen mr-4" id="badgeNotifications">
+											<img  data-toggle="modal" data-target="#notifModal" src="/img/notification-bell.png" width="16" height="16" class="d-inline-block align-center" alt="Opiniones" loading="lazy">
+										</a>
+								<button type="button" class="btn btn-dark btn-sm mr-1" data-toggle="modal" data-target="#modalRep">Rep:
+										 <span class="badge badge-light" id="scoreUser"></span>
+												</button>
+								<button class="btn btn-dark btn-sm " type="button" id="user" >Ingresar</button>
+								<button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+													<span class="sr-only">Toggle Dropdown</span>
+												</button>
+												<div class="dropdown-menu" id="userMenu">
+													<a class="dropdown-item" id="modalMiCuenta" href="micuenta.html">Mi cuenta</a>
+													<a class="dropdown-item" id="panelAdmin" hidden>Panel de Control</a>
+													<a class="dropdown-item" id="modalMisOpiniones" href="misopiniones.html">Mis Opiniones</a>
+													<a class="dropdown-item" id="salir">Cerrar Sesion</a>
+												</div>
+						 </div>
+						</form>
+					</div>
+				</nav>
+
+
+		</header>
+		<!-- Modal  Notifications -->
+		<div class="modal fade " id="notifModal" tabindex="-1" role="dialog" aria-labelledby="notifModal" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content bg-dark">
+					<div class="modal-header">
+							<h5 class="modal-title text-white" id="exampleModalLabel">Notificaciones</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body" id="notifAlert">
+
+
+										</div>
+										<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" id="cleanNotif">Marcar como leidas</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+															<!-- Content here -->
+
+
+
+
+															<!--Caja de comentarios-->
+
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h2 class="text-center text-white">Terminos y condiciones</h2>
+                                    <p class="text-left mr-5 ml-5 text-white">Los presentes Términos y Condiciones (“Condiciones Generales”) constituyen
+																			 las normas y reglas dispuestas por Opiniones (“Opiniones”), relativas a todos los servicios existentes actualmente o
+																			 que resulten incluidos en el futuro dentro del sitio web www.opiniones.ar y su aplicación (los “Servicios”, el “Sitio”
+																			  y la “Aplicación”, respectivamente). Dichos Servicios, si bien pueden ser gratuitos, no son de libre utilización, sino
+																				 que están sujetos a un conjunto de pautas que regulan su uso, entre ellas las presentes Condiciones Generales. Estas
+																				 Condiciones Generales se aplican a todos los visitantes, usuarios y otras personas que accedan al Sitito y/o a los
+																				  Servicios (“Usuarios”).</p>
+																					<p class="text-left mr-5 ml-5 text-white">CADA USUARIO DEBERÁ LEER ATENTAMENTE ESTAS CONDICIONES GENERALES, YA QUE LAS MISMAS CONTIENEN INFORMACIÓN IMPORTANTE SOBRE LOS DERECHOS Y OBLIGACIONES LEGALES DE Opiniones Y LOS USUARIOS. EL ACCESO Y/O LA UTILIZACIÓN DEL SITIO, LA APLICACIÓN Y/O DE CUALQUIERA DE LOS SERVICIOS POR PARTE DE UN USUARIO, IMPLICA QUE DICHO USUARIO HA LEÍDO, COMPRENDE Y ACEPTA SOMETERSE A LAS PRESENTES CONDICIONES GENERALES.</p>
+																					<p class="text-left mr-5 ml-5 text-white">El aprovechamiento que un Usuario haga de los Servicios incluidos en el Sitio y/o la Aplicación, sólo se considerará lícito y autorizado cuando lo sea en cumplimiento de las obligaciones impuestas, con los límites y alcances aquí delineados, así como los que surjan de disposiciones complementarias o accesorias, y/o de las diferentes normativas legales de orden nacional e internacional cuya aplicación corresponda.</p>
+																					<p  class="text-left mr-5 ml-5 text-white">Opiniones podrá en cualquier momento y sin necesidad de previo aviso modificar estas Condiciones Generales. Tales modificaciones serán operativas a partir de su publicación en el Sitio y/o la Aplicación, indicándose en el encabezado de las presentes la fecha de la última actualización. Los Usuarios deberán mantenerse actualizados en cuanto a los términos aquí incluidos ingresando en forma periódica al apartado correspondiente dentro del Sitio y/o la Aplicación.</p>
+																					<h4 class="text-left text-white ml-2">La aceptación por parte de los Usuarios</h4>
+																					<p class="text-left mr-5 ml-5 text-white">Cuando un Usuario accediere al Sitio y/o la Aplicación y/o utilizare los Servicios y/o cualquiera de los contenidos existentes, dicha circunstancia implicará el conocimiento y plena aceptación con respecto a todas y cada una de las disposiciones contenidas en las presentes Condiciones Generales por parte de dicho Usuario.</p>
+																					<p class="text-left mr-5 ml-5 text-white">El Usuario que no acepte, se halle en desacuerdo, o incurriere en incumplimiento de las disposiciones fijadas por Opiniones en estas Condiciones Generales, no contará con autorización para el uso de los Servicios y contenidos que existen o puedan existir en el Sitio y/o la Aplicación, debiendo abstenerse de acceder y/o utilizar el Sitio y/o la Aplicación y/o los Servicios por cualquier medio.</p>
+																					<h4 class="text-left text-white ml-2">Capacidad legal de los usuarios.</h4>
+																					<p class="text-left mr-5 ml-5 text-white">Solo podrán acceder y utilizar el Sitio y/o la Aplicación, los Servicios y/o contenidos de Opiniones, quienes a tenor de la legislación vigente en su lugar de residencia, sea mayores de edad y puedan válidamente emitir su consentimiento para la celebración de contratos. Quienes, a tenor de la legislación vigente, no sean mayores de edad o no posean tal capacidad para acceder u obligarse válidamente frente a las
+																					Condiciones Generales aquí establecidas, deberán obtener inexcusablemente autorización previa de sus representantes legales, quienes serán considerados responsables de todos los actos realizados por los incapaces a su cargo.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Cuando se trate de falta de capacidad por minoría de edad, la responsabilidad en la determinación de los Servicios y contenidos a los que acceden los menores de edad corresponde a los mayores a cuyo cargo se encuentren, sin embargo, en ningún caso estará permitido el acceso al Sitio y/o la Aplicación y/o los Servicios por parte de menores de 18 años.</p>
+																					<h4 class="text-left text-white ml-2">Registración de los Usuarios.</h4>
+																					<p class="text-left mr-5 ml-5 text-white">Para acceder al Sitio y/o la Aplicación y/o valerse de algunos Servicios prestados por Opiniones, basta la sola aceptación de estas Condiciones Generales. Sin embargo, para la utilización de algunas funciones del Sitio y/o la Aplicación, de otros Servicios específicos o para acceder a cierto contenido, podrá establecerse como requisito el previo registro del Usuario dentro del Sitio y/o la Aplicación. Dicho registro tendrá por finalidad establecer la identidad e información de contacto del Usuario, información esta que será asociada a su cuenta dentro del Sitio y/o la Aplicación.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Toda vez que para la registración de un Usuario le sea requerida información, la misma deberá ser fidedigna y adecuada, y poseerá el carácter de declaración jurada. Cuando la información suministrada no atienda a las circunstancias reales de quien la brinda, se considerará tal Usuario incurso en incumplimiento de estas Condiciones Generales, siendo responsable por todos los perjuicios que derivaren para Opiniones o terceros como consecuencia de tal falta de veracidad o exactitud. Asimismo, en tal caso Opiniones se encontrará facultada a cerrar la cuenta de Usuario a los fines de impedir que el mismo siga utilizando el Sitio y/o la Aplicación y/o los Servicios.</p>
+																					<p class="text-left mr-5 ml-5 text-white">El Usuario dispondrá, una vez registrado, de un nombre de usuario y una contraseña que le permitirá el acceso personalizado, confidencial y seguro a su cuenta personal dentro del Sitio y/o la Aplicación. Los Servicios sujetos a registración han sido concebidos para el uso personal del Usuario requirente, por tanto, el nombre de usuario y la contraseña de acceso concedidos por Opiniones solo podrán ser usados por este, estando prohibida su utilización por otra persona distinta al mismo. El Usuario registrado asumirá la obligación de guarda y custodia de su nombre de usuario y contraseña de acceso, debiendo informar inmediatamente a Opiniones cuando los mismos hubieren perdido su estado de confidencialidad, y/o cuando sean objeto de uso por un tercero.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Será también responsabilidad de cada Usuario mantener actualizada su información personal asentada en el registro conforme resulte necesario, debiendo comunicar a Opiniones toda vez que se produzcan cambios en relación a la misma.</p>
+																					<p  class="text-left mr-5 ml-5 text-white">Opiniones podrá rechazar cualquier solicitud de registración o, cancelar una registración previamente aceptada, sin que tal decisión deba ser justificada, y sin que ello genere derecho alguno en beneficio del Usuario.</p>
+																					<p class="text-left mr-5 ml-5 text-white">En todos los casos, y de acuerdo con las Políticas de Privacidad de Opiniones, la información de carácter personal suministrada por los Usuarios será objeto de adecuado tratamiento y preservación, en resguardo de la privacidad de la misma. Sin embargo, los servicios de Opiniones fueron diseñados entre otros fines para permitir que los Usuarios accedan a ciertos datos (no sensibles) de otros Usuarios permitiendo la interacción entre los mismos dentro de un esquema de red social. Por consiguiente, haciendo entrega de cualquier información personal distinta de su nombre, el Usuario renuncia a cualquier expectativa de privacidad que posea con respecto al uso de esa información personal proporcionada dentro del Sitio y/o la Aplicación. Los Usuarios que no deseen que su fotografía o imagen, página web, ciudad de residencia, nacionalidad, o descripción personal ingresadas en el Sitio, puedan ser brindadas al público no deberán registrarse en Opiniones ni utilizar el Sitio y/o la Aplicación y/o los Servicios.</p>
+																					<h4  class="text-left text-white ml-2">Libre acceso a los Servicios.</h4>
+																					<p class="text-left mr-5 ml-5 text-white">Más allá de la obligación de cumplimiento de todas y cada una de estas Condiciones Generales, todos los servicios y contenidos ofrecidos en el Sitio son libremente accesibles por parte de los Usuarios. La libre accesibilidad incluye la gratuidad de los Servicios, que no estarán sujetos al pago de ningún arancel o retribución hacia Opiniones.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Tal gratuidad no es de aplicación sobre los Servicios de terceros brindados a través del Sitio que podrán no ser gratuitos, y en igual sentido aquellos respecto de servicios y/o contenidos, actuales o futuros sobre los que Opiniones decida establecer un canon para su utilización por parte de los Usuarios.</p>
+																					<p  class="text-left mr-5 ml-5 text-white">El libre acceso y gratuidad no comprenden las facilidades de conexión a Internet. En ningún caso Opiniones, proveerá a los Usuarios la conectividad necesaria para que estos accedan a Internet. Será por exclusiva cuenta, cargo y responsabilidad de cada Usuario la disposición de los medios técnicos necesarios para acceder a Internet.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Sin perjuicio de lo dispuesto en el presente punto, Opiniones se reserva en forma expresa la facultad de establecer cualquier arancel, canon o costo para acceder o utilizar todo o alguna parte del Sitio y/o la Aplicación y/o los Servicios. Dicha circunstancia será puesta en conocimiento de los Usuarios con suficiente antelación, y aquellos Usuarios que no deseen abonar el costo correspondiente podrán optar por dejar de utilizar el Sitio y/o la Aplicación y/o los Servicios afectados.</p>
+																					<h4 class="text-left text-white ml-2">De los servicios y contenidos en particular.</h4>
+																					<p class="text-left mr-5 ml-5 text-white">Opiniones es un sitio de Internet basado en una herramienta de comunicación, que permite que sus Usuarios compartan opiniones de creación propia, sobre cualquier tema. El objetivo de Opiniones es que sus Usuarios pueda expresar su opinión sobre cualquier tema que este permitido dentro del sitio, con el fin de que cualquier persona en internet pueda verla.</p>
+																					<h4 class="text-left text-white ml-2">De las Op!</h4>
+																					<p class="text-left mr-5 ml-5 text-white">El principal servicio que Opiniones pone a disposición de los Usuarios es la posibilidad de conocer las manifestaciones expresadas por otros Usuarios, publicadas en el Sitio y/o la Aplicación en forma de “Op!”. Para obtener acceso para la visualización y lectura de las Op!s solo basta la aceptación de las presentes Condiciones Generales; sin embargo, la creación y fijación de una Op!, así como a ciertas funcionalidades, solo estará reservada a los Usuarios registrados.</p>
+																					<h4 class="text-left text-white ml-2">Creación y fijación</h4>
+																					<p class="text-left mr-5 ml-5 text-white" >Quienes se registren en Opiniones podrán publicar sus “opiniones” libremente, para ello Opiniones pone a disposición de los Usuarios registrados una herramienta para la creación y edición de sus Ops!, junto con los medios necesarios para su almacenamiento y exhibición dentro del Sitio y/o la Aplicación y/o los Servicios.</p>
+																					<h4 class="text-left text-white ml-2" >Contenido de las Ops!</h4>
+																					<p class="text-left mr-5 ml-5 text-white">Las Ops! que los Usuarios incorporen sólo podrán contener texto. Cuando el Usuario pretendiere insertar en su post fotografías, imágenes, ilustraciones, videos, animaciones, o referencia a archivos o sitios ajenos a Opiniones, sólo podrá hacerlo a través de links, mediante la indicación de la dirección Uniform Resource Locator (“URL”) en donde se encuentre alojado el archivo que pretenda asociar a su Op!.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Opiniones solo procederá a la publicación de la dirección URL del archivo asociado, pudiendo en determinados casos efectuar un embedded link que permita la visualización del enlace dentro del Sitio. Consecuentemente, en ningún caso los Usuarios podrán transferir archivos hacia el Sitio con el objeto que los mismos sean incorporados a sus Ops!, o en general realizar una carga o “upload” al propio Sitio, de tal forma que esos archivos (o una copia de ellos) pasen a residir en los servidores de Opiniones. En igual sentido no existen en el sitio archivos destinados a su descarga por parte de los Usuarios.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Opiniones es un sitio dedicado a la comunicación entre personas, mediante una estructura de red social.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Opiniones NO ACTUA COMO UN SITIO DE INTERCAMBIO DE ARCHIVOS.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Opiniones NO ACTUA COMO UN TRACKER.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Opiniones NO CONSTITUYE UNA RED PEER TO PEER (“P2P”).</p>
+																					<h4 class="text-left text-white ml-2">Sobre los links incorporados en las Ops!</h4>
+																					<p class="text-left mr-5 ml-5 text-white">Un link dentro de una página web (denominado también enlace, vínculo, hipervínculo o, hiperenlace) es un elemento que hace referencia a otro recurso, por ejemplo, otra página o sitio web.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Así los links a diversos archivos que los Usuarios incorporan en los post publicados en Opiniones permiten invocar a una página web determinada, o a una posición determinada en una página web, pero en todos los casos los links siempre harán referencia a páginas web titularidad de terceros y ajenas al control de Opiniones.</p>
+																					<p class="text-left mr-5 ml-5 text-white">Los links son simples enlaces que direccionan hacia cierta información o activan determinados contenidos, pero que en ningún caso constituyen reproducciones de los contenidos a los cuales enlazan.</p>
+																					<h4 class="text-left text-white ml-2">Aspectos a tener en cuenta sobre la incorporación de links:</h4>
+																					<p class="text-left mr-5 ml-5 text-white"> Uno de los principales derechos patrimoniales de un autor es el de reproducción de su obra, este derecho confiere la facultad de prohibir reproducciones de su obra sin autorización previa y expresa. Un link no vulnera el derecho de reproducción, las direcciones URL son meros hechos que no están protegidos por el derecho de autor por no implicar la realización de una copia de una obra. Sin embargo, cuando el autor o el titular de los derechos sobre una obra no la hubiere publicado, nadie sin autorización de éste podría lícitamente hacerlo, por consiguiente, LOS USUARIOS SOLO PODRAN ASOCIAR A SUS POSTS, LINKS QUE REFIERAN A OBRAS QUE HUBIEREN SIDO LICITAMENTE PUBLICADAS EN INTERNET POR SU TITULAR.</p>
+																					<h4 class="text-left text-white ml-2">Calificar Ops!:</h4>
+																					<p class="text-left mr-5 ml-5 text-white">Esta funcionalidad consiste en la posibilidad que tienen los Usuarios registrados, de efectuar una ponderación o calificación sobre los Ops! fijados por otros Usuarios.</p>
+																					<p class="text-left mr-5 ml-5 text-white">La calificación que reciba cada Op! será exhibida sobre el mismo, y el conjunto de calificaciones recibidas por un Usuario en base a sus Ops! establecerá la puntuación total del Usuario, de esta forma el Usuario podrá conocer la opinión general de los demás Usuarios expresada a través de la calificación de la que fueran merecedores sus Ops!.</p>
+																					<h4  class="text-left text-white ml-2">Del contacto entre Usuarios.</h4>
+																					<p class="text-left mr-5 ml-5 text-white">Adicionalmente Opiniones, brinda la posibilidad a los Usuarios de compartir sus redes sociales en cada Op! creada, para que los demás usuarios puedan contactarlos.</p>
+																					<h4  class="text-left text-white ml-2">Disposiciones comunes.</h4>
+																						<ul>
+																					<li class="text-left mr-5 ml-5 text-white">a.	Conforme se detalla en el punto 6; todo Usuario será exclusivo responsable por los Ops!.</li>
+																						<li class="text-left mr-5 ml-5 text-white">b.	La enumeración precedente es al solo efecto enunciativo y no taxativo. Opiniones podrá agregar, modificar, suprimir total o parcialmente los Servicios y contenidos, sin que para ello se requiera conformidad o notificación previa de ningún tipo. Salvo estipulación en contrario, todo nuevo contenido o ampliación de los existentes se regirá por estas Condiciones Generales.</li>
+																							</ul>
+																						<h4 class="text-left text-white ml-2">Utilización de los servicios y contenidos brindados por el Sitio</h4>
+																						<p class="text-left mr-5 ml-5 text-white">Los Usuarios deberán utilizar los Servicios, y acceder a los contenidos del Sitio y/o la Aplicación de conformidad con las disposiciones establecidas en estas Condiciones Generales; el ordenamiento jurídico al que se encuentren sometidos en razón del lugar, de las personas, o de la materia de la cual se trate, considerado en su conjunto; y según las pautas de conducta impuestas por la moral, las buenas costumbres y el debido respeto a los derechos de terceros.</p>
+																						<h4 class="text-left text-white ml-2">Uso prohibido de los servicios o contenidos</h4>
+																						<p class="text-left mr-5 ml-5 text-white">Cualquier uso de los Servicios que tenga por objeto, lesionar los derechos de terceros, contravenir el orden jurídico o constituya una práctica ofensiva al pudor público, se reputará como USO PROHIBIDO del Sitio, los Servicios o contenidos, en tanto transgrede los fines para los que fue puesto a disposición de los Usuarios.</p>
+																						<p  class="text-left mr-5 ml-5 text-white">Se considerará como USO PROHIBIDO, entre otros, la fijación de Ops!, su propagación, así como la indicación de vínculos a páginas web, que:</p>
+																						<ul>
+																							<li class="text-left mr-5 ml-5 text-white">Resulten ofensivos para los derechos personalísimos de los individuos, con especial referencia al derecho al honor, a la dignidad, a la intimidad, a no ser objeto de tratos discriminatorios, a la salud, a la imagen, y a la libre expresión de las ideas; con absoluta independencia del cuerpo legal donde tales derechos adquieran reconocimiento.</li>
+																							<li class="text-left mr-5 ml-5 text-white">Infrinjan los derechos de propiedad intelectual de terceros.</li>
+																							<li class="text-left mr-5 ml-5 text-white">Posea contenido inapropiado.</li>
+																							<li class="text-left mr-5 ml-5 text-white">Tenga por objeto vulnerar la seguridad, y/o normal funcionamiento de los sistemas informáticos de Opiniones o de terceros.</li>
+																							<li class="text-left mr-5 ml-5 text-white">Induzca, instigue o promueva acciones delictivas, ilícitas, disfuncionales o moralmente reprochables, o constituya una violación de derechos de propiedad intelectual de terceras personas.</li>
+																							<li class="text-left mr-5 ml-5 text-white">Incorporen alguna forma de publicidad o fin comercial no permitidos por Opiniones.</li>
+																							<li class="text-left mr-5 ml-5 text-white">Tenga por objeto recolectar información de terceros con el objeto de remitirles publicidad o propaganda de cualquier tipo o especie, sin que esta fuera expresamente solicitada.</li>
+																										</ul>
+																							<h4 class="text-left text-white ml-2">Aspectos relacionados con la Propiedad Intelectual</h4>
+																							<h5 class="text-left text-white ml-2">Contenido de terceros</h5>
+																							<p class="text-left mr-5 ml-5 text-white">En uso de los Servicios ofrecidos en el Sitio, el Usuario puede tener acceso a contenidos provistos por otros Usuarios o terceros. Opiniones realiza sus mejores esfuerzos para controlar el material que le es suministrado, sin embargo, cada Usuario acepta que eventualmente podrá ser expuesto a contenido de terceros que sea falso, ofensivo, indecente o de otra manera inaceptable. Bajo ninguna circunstancia podrá responsabilizar a Opiniones por tal circunstancia.</p>
+																							<h5 class="text-left text-white ml-2">Material titularidad de Opiniones</h5>
+																							<p class="text-left mr-5 ml-5 text-white">Todo el material existente en el Sitio y/o los Servicios, que no corresponda a un Usuario u otro tercero, constituye propiedad exclusiva de Opiniones. A título meramente enunciativo, se entenderán incluidos las imágenes, fotografías, diseños, gráficos, sonidos, compilaciones de datos, marcas, nombres, títulos, designaciones, signos distintivos, y todo otro material accesible a través del Sitio y/o los Servicios.</p>
+																							<p class="text-left mr-5 ml-5 text-white">La titularidad del conjunto o selección de links incorporados por los Usuarios al Sitio, corresponderá a Opiniones en calidad de propiedad intelectual, en tanto obra de clasificación y compilación. Dicha propiedad está constituida no por los vínculos o links considerados en forma individual, sino por la selección del conjunto de links. En ese orden los Usuarios ceden y transfieren irrevocablemente a Opiniones todos los derechos que pudieran corresponderles sobre la selección de links que cada uno de ello individualmente hubiere realizado.</p>
+																							<p class="text-left mr-5 ml-5 text-white">Opiniones se reserva todos los derechos sobre el mencionado material, no cede ni transfiere a favor del Usuario ningún derecho sobre su propiedad intelectual o la de terceros. En consecuencia, su reproducción, distribución, y/o modificación deberá ser expresamente autorizada por parte de Opiniones, so pena de considerarse una actividad ilícita violatoria de los derechos de propiedad intelectual de Opiniones.</p>
+																							<p class="text-left mr-5 ml-5 text-white">Los Usuarios del sitio sólo contarán con autorización para la utilización del material propiedad de Opiniones, cuando las finalidades de tal utilización sean aquellas específicamente previstas por Opiniones.</p>
+																							<h4 class="text-left text-white ml-2">Operatividad del sitio</h4>
+																							<p class="text-left mr-5 ml-5 text-white">Correspondientemente con el carácter gratuito de los Servicios brindados, Opiniones no garantiza la plena operatividad del Sitio y el acceso a los Servicios y contenidos del mismo. En ningún caso Opiniones responderá por la operatividad, eficacia y seguridad del Sitio y/o los Servicios y contenidos puestos a disposición de los Usuarios mediante los mismos.</p>
+																							<p class="text-left mr-5 ml-5 text-white">Opiniones no garantiza la conservación, integridad ni indemnidad de las Ops!, fijadas por los Usuarios en el Sitio y/o mediante los Servicios.</p>
+																							<h4 class="text-left text-white ml-2">Links hacia Opiniones</h4>
+																							<p class="text-left mr-5 ml-5 text-white">El establecimiento de cualquier link, hipervínculo o enlace, entre una página web ajena al Sitio y cualquier página de este último solo podrá realizarse con expresa autorización por parte de Opiniones.</p>
+																							<p class="text-left mr-5 ml-5 text-white">En ningún caso Opiniones será responsable por los contenidos o manifestaciones existentes en las páginas web desde donde se establezcan los hipervínculos hacia el Sitio de Opiniones. El hecho que exista un link entre una página web y el Sitio de Opiniones no implica que Opiniones tenga conocimiento de ello, o que Opiniones mantenga relación alguna con los titulares de la página web desde donde se establece el enlace.</p>
+																							<p class="text-left mr-5 ml-5 text-white">Opiniones, se reserva el derecho a solicitar la remoción o eliminación de cualquier enlace desde una página web ajena al Sitio, en cualquier momento, sin expresión de causa, y sin que sea necesario preaviso alguno. El responsable de la página web desde la cual se efectuare el enlace tendrá un plazo de 48hs. contados a partir del pedido de Opiniones para proceder a la remoción o eliminación del mismo.</p>
+																							<h4 class="text-left text-white ml-2">Links desde Opiniones</h4>
+																							<h5 class="text-left text-white ml-2">Links provistos por Opiniones</h5>
+																							<p class="text-left mr-5 ml-5 text-white">Los hipervínculos o enlaces a páginas web de terceros provistos por Opiniones, tienen por finalidad mejorar la experiencia de navegación del Usuario por el Sitio, poniendo a su disposición canales de acceso a otros sitios.</p>
+																							<h5 class="text-left text-white ml-2">Links provistos por los Usuarios</h5>
+																							<p class="text-left mr-5 ml-5 text-white">De acuerdo a lo expresado en el punto 6; los Usuarios podrán incorporar en sus Ops! links que remitan a distintos recursos alojados fuera del Sitio. El objeto de estos links es incrementar las posibilidades de comunicación de los Usuarios, permitiendo así la referencia a cualquier elemento que se encuentre en Internet.</p>
+																							<h5 class="text-left text-white ml-2">Responsabilidad derivada de los links</h5>
+																							<p class="text-left mr-5 ml-5 text-white">En ninguno de los casos precedentemente enunciados Opiniones controla, respalda o garantiza la seguridad, calidad, licitud, veracidad e idoneidad de los servicios y contenidos a los cuales se acceda a través de un hipervínculo. La inclusión del link no significa que Opiniones se encuentre en forma alguna relacionada con el sitio al que dirige el link, ni que apoye, este de acuerdo, facilite o colabore en las actividades que en ese sitio se desarrollen.</p>
+																							<p class="text-left mr-5 ml-5 text-white">La responsabilidad por los servicios o contenidos en los sitios enlazados corresponderá exclusivamente a los titulares de dichos sitios. Bajo ningún supuesto Opiniones será responsable por las irregularidades, ilicitudes o infracciones que en dichos sitios se registren, no respondiendo en tal sentido por los daños que pudieren experimentar los Usuarios o terceros a partir de los contenidos allí publicados.<p>
+																							<p class="text-left mr-5 ml-5 text-white">El acceso y utilización de páginas web enlazadas desde el Sitio de Opiniones será exclusiva responsabilidad del Usuario, quien deberá tomar todas las medidas de precaución necesarias de acuerdo al tipo de servicio, o contenido al que acceda.</p>
+																							<p class="text-left mr-5 ml-5 text-white">El Usuario que considere inadecuada una página vinculada desde el Sitio, podrá elevar su queja o recomendación a través del mecanismo de denuncias puesto a disposición de los Usuarios por parte de Opiniones.</p>
+																							<h5 class="text-left text-white ml-2">Responsabilidad derivada de los links</h5>
+																							<h4 class="text-left text-white ml-2">Finalización del Servicio</h4>
+																							<p class="text-left mr-5 ml-5 text-white">Opiniones podrá a su sola discreción suspender temporalmente o desactivar definitivamente la cuenta de un Usuario, sin que medie previa notificación al mismo, y sin que sea necesaria la invocación de causa alguna, procediéndose en tal caso a la eliminación de toda la información relacionada con la cuenta. Asimismo, Opiniones podrá adoptar cualquier otra medida que resulte necesaria o conveniente a los fines de impedir el accedo al Sitio y/o los Servicios por parte de un Usuario, para el caso en que dicho Usuario hubiere incumplido con las presentes Condiciones Generales, o cuando dicho Usuario constituya un riesgo para el Sitio, los Servicios, otros Usuarios y/o Opiniones.</p>
+																							<h4 class="text-left text-white ml-2">Notificaciones y comunicaciones</h4>
+																							<p class="text-left mr-5 ml-5 text-white">A los fines que los Usuarios puedan tomar contacto con Opiniones, se considerarán válidas las comunicaciones dirigidas a: denuncias@opiniones.com.</p>
+																							<p class="text-left mr-5 ml-5 text-white">Las notificaciones y comunicaciones cursadas por Opiniones a la casilla de correo electrónico que surja como dirección de correo del Usuario o remitente se considerarán eficaces y plenamente válidas. Asimismo, se considerarán eficaces las comunicaciones que consistan en avisos y mensajes insertos en el sitio, o que se envíen durante la prestación de un servicio, que tengan por finalidad informar a los Usuarios sobre determinada circunstancia.</p>
+																							<!--<h4 class="text-center text-white">Legislación aplicable y jurisdicción</h4> -->
+																							<p class="text-left mr-5 ml-5 text-white">© Opiniones 2020. Todos los derechos reservados. Prohibida su reproducción total o parcial.</p>
+
+
+
+
+																</div>
+
+																<footer class="footer  ">
+																		<div  class="d-flex flex-column">
+																							<span class="text-white text-center   ">Opiniones 2020 ©. Todos los derechos reservados.</span>
+																							</div>
+																		</footer>
+	</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Opiniones - Registro</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Crea una cuenta o inicia sesión en Opiniones!. Expresa tu punto de vista,
+	sin que nadie pueda censurarte. Comparte tu opinion atraves de todas
+	tus redes sociales. Sube de rango y personaliza tus opiniones con diseños exclusivos
+	Muestra al mundo tu opinion con un estilo unico y personal.  ">
+	<meta name="keywords" content="social, opinion, opiniones, puntos de vista">
+	<meta name="author" content="Sebastian Cabeza">
+	<link rel="shortcut icon" href="/img/opiniones_icono.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" href="node_modules/bootstrap/css/bootstrap.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="node_modules/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src = "js/register.js"></script>
+	<link rel="stylesheet" href="/css/img_effects.css" type="text/css">
+
+	<style>
+				.bd-placeholder-img {
+					font-size: 1.125rem;
+					text-anchor: middle;
+					-webkit-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					user-select: none;
+				}
+
+				@media (min-width: 768px) {
+					.bd-placeholder-img-lg {
+						font-size: 3.5rem;
+					}
+				}
+			</style>
+				<link href="css/signin.css" rel="stylesheet">
+</head>
+
+
+<body class="text-center bg-dark d-flex flex-column">
+
+				<form  class="form-signin  bg-dark">
+						<img class="mb-4 imagen" src="img/nombreweb.png" alt="" width="126" height="52">
+						<h1 class="h3 mtb-3 font-weight-normal text-white bg-dark">Registrate</h1>
+						<input type="text" id="user" class="mt-2 form-control" placeholder="Usuario" minlength="5" maxlength="15" pattern="[a-zA-Z0-9-]+" title="Solo se admiten mayusculas, minusculas y numeros, Minimo 5 caracteres."  required >
+						<input type="password" id="pass" class="mt-2 form-control" placeholder="Contraseña"    required >
+						<input type="email" id="email" class="mt-2 form-control" placeholder="Email"  title="Direccion de email no valida"  required >
+
+						<div class="form-check mt-1">
+								<input class="form-check-input" type="checkbox" value="1" id="checkTerminos" required>
+								<label class="form-check-label text-white" for="checkTerminos">
+										<a href="terminos-y-condiciones.html" target="_blank" >Acepto terminos y condiciones</a>
+								</label>
+							</div>
+
+						<button class="mt-2 btn btn-lg btn-primary btn-block"  id="submitregister">Registrarse</button>
+
+						<div class="alert alert-success mt-3" id="alertSuccess" role="alert">
+									Registro exitoso!
+									Seras redireccionado.
+									</div>
+
+						</form>
+
+						<footer class="footer  ">
+								<div  class="d-flex flex-column">
+													<span class="text-white text-center   ">Opiniones 2020 ©. Todos los derechos reservados.</span>
+													</div>
+								</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+// gradient: https://www.gradientmagic.com/collection/rainbowstandard
+
+
+
+
+ @mixin gradient-border($c1,$c2,$c3,$c4,$c5,$c6,$c7,$c8,$p1,$p2,$p3,$p4,$p5,$p6,$p7,$p8) {
+  --border-width: 3px;
+
+  border-radius: var(--border-width);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl($c1, $p1, 66%),
+      hsl($c2, $p2, 66%),
+      hsl($c3, $p3, 66%),
+      hsl($c4, $p4, 66%),
+      hsl($c5, $p5, 66%),
+      hsl($c6, $p6, 66%),
+      hsl($c7, $p7, 66%),
+      hsl($c8, $p8, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-border-new
+{
+  @include gradient-border(224,369,314,359,44,89,134,179,80%,80%,80%,80%,80%,80%,80%,80%);
+
+
+}
+.gradient-border-conso
+{
+  @include gradient-border(237,237,237,237,237,237,237,237,80%,0%,80%,0%,80%,0%,80%,0%);
+
+
+}
+.gradient-border-contro
+{
+  @include gradient-border(350,350,350,350,350,350,350,350,80%,0%,80%,0%,80%,0%,80%,0%);
+
+
+}
