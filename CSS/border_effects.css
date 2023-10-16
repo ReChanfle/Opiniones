@@ -1,0 +1,53 @@
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%; } }
+.gradient-border-new {
+  --border-width: 3px;
+  border-radius: var(--border-width); }
+  .gradient-border-new::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(60deg, #6388ee, #ee7863, #ee63cd, #ee6365, #eec963, #abee63, #63ee83, #63eeeb);
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite; }
+
+.gradient-border-conso {
+  --border-width: 3px;
+  border-radius: var(--border-width); }
+  .gradient-border-conso::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(60deg, #636aee, #a8a8a8, #636aee, #a8a8a8, #636aee, #a8a8a8, #636aee, #a8a8a8);
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite; }
+
+.gradient-border-contro {
+  --border-width: 3px;
+  border-radius: var(--border-width); }
+  .gradient-border-contro::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(60deg, #ee637a, #a8a8a8, #ee637a, #a8a8a8, #ee637a, #a8a8a8, #ee637a, #a8a8a8);
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite; }

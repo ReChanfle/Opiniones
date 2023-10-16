@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<title>Opiniones - Mis Opiniones</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Modifica y personaliza tus Opiniones!, expresa tu punto de vista,
+	sin que nadie pueda censurarte. Comparte tu opinion a través de todas
+	tus redes sociales. Sube de rango y personaliza tus opiniones con diseños exclusivos
+	Muestra al mundo tu opinion con un estilo unico y personal. ">
+	<meta name="keywords" content="social, opinion, opiniones,puntos de vista">
+	<meta name="author" content="Sebastian Cabeza">
+	<link rel="shortcut icon" href="/img/opiniones_icono.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" href="node_modules/bootstrap/css/bootstrap.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="node_modules/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src = "js/getUsername.js"></script>
+  <script src = "js/getOpById.js"></script>
+	  <script src = "js/Customize.js"></script>
+
+
+	<link rel="stylesheet" href="/css/img_effects.css" type="text/css">
+	<link rel="stylesheet" href="/css/border_effects.css" type="text/css">
+
+</head>
+
+<body class="bg-dark text-center" >
+	<header>
+
+		<nav class="navbar  navbar-expand-lg navbar-light bg-secondary" >
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+		    <a class="navbar-brand imagen" href="index.html"> <img src="/img/opiniones_login.png" width="90" height="40" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></a>
+
+		    <form class="form-inline my-2 my-lg-0">
+					<!--<button class="btn btn-dark  btn-sm  mr-5" type="button" data-toggle="modal" data-target="#crearCommentModal" id="botonOpinion" ><img src="/Opiniones/img/crear_op.png" width="80" height="20" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></button>
+		      <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search"></input>
+		      <button class="btn btn-dark my-2 btn-sm my-sm-0  " type="submit"><img src="/Opiniones/img/buscar.png" width="70" height="18" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></button> -->
+
+					<div class="btn-group btn-sm ml-5 ">
+						<a class="imagen mr-4" id="badgeNotifications">
+								 	<img data-toggle="modal" data-target="#notifModal" src="/img/notification-bell.png" width="16" height="16" class="d-inline-block align-center" alt="Opiniones" loading="lazy">
+								</a>
+						<button type="button" class="btn btn-dark btn-sm mr-1" data-toggle="modal" data-target="#modalRep">Rep:
+								 <span class="badge badge-light" id="scoreUser"></span>
+										</button>
+						<button class="btn btn-dark btn-sm " type="button" id="user" >Ingresar</button>
+						<button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <span class="sr-only">Toggle Dropdown</span>
+									  </button>
+										<div class="dropdown-menu" id="userMenu">
+											<a class="dropdown-item" id="modalMiCuenta" href="micuenta.html">Mi cuenta</a>
+											<a class="dropdown-item" id="panelAdmin" hidden>Panel de Control</a>
+											<a class="dropdown-item" id="modalMisOpiniones" href="misopiniones.html">Mis Opiniones</a>
+											<a class="dropdown-item" id="salir">Cerrar Sesion</a>
+										</div>
+		     </div>
+		    </form>
+		  </div>
+		</nav>
+
+
+	</header>
+
+
+  <div class="accordion mt-2  ml-5 mr-5" id="accordionExample">
+
+                <div class="card bg-secondary">
+                            <div class="card-header" id="headingOne">
+	                            <h2 class="mb-0">
+		                            <button class="btn btn-link btn-block text-white text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+		                              Mis Opiniones:
+		                            </button>
+	                            </h2>
+														</div>
+
+                            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+
+                            <div class="card-body ">
+
+                              <div id="labelCat" class="input-group d-flex ">
+                                      <div class="input-group-prepend">
+                                        <label class="input-group-text"  for="inputGroupSelect01">Categoria:</label>
+                                      </div>
+                                      <select class="custom-select" id="inputGroupSelect01" required autofocus>
+                                        <option selected disabled value="">Elige la categoria de tu Opinion</option>
+                                        <option value="1">Productos</option>
+                                        <option value="2">Servicios</option>
+                                        <option value="3">Politica</option>
+                                         <option value="4">Sociedad</option>
+                                          <option value="5">Medio Ambiente</option>
+                                           <option value="6">interes general</option>
+                                            <option value="7">Todas mis Opiniones</option>
+                                      </select>
+
+                              </div>
+
+
+
+                              <button type="button" class="btn mt-2 btn-dark" id="submitRequest">Aceptar</button>
+
+															<!-- Alerta busqueda -->
+																<div id="bodyAlert">
+																</div>
+
+                            	</div>
+                            </div>
+
+
+											</div>
+
+									<div class="card bg-secondary">
+
+														<div class="card-header" id="headingTwo">
+	                            <h2 class="mb-0">
+		                            <button class="btn btn-link btn-block text-white text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		                              Personalizacion:
+		                            </button>
+	                            </h2>
+															</div>
+
+														<div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionExample">
+
+		                            <div class="card-body ">
+
+		                              <div id="labelCat1" class="input-group d-flex mb-3 ">
+		                                      <div class="input-group-prepend">
+		                                        <label class="input-group-text" for="inputGroupSelect02">Encabezados:</label>
+		                                      </div>
+		                                      <select class="custom-select" id="inputGroupSelect02" required >
+		                                        <option selected disabled value="">Elige el encabezado para tu Opinion</option>
+
+		                                      </select>
+
+		                              </div>
+																	<div  id="labelCat2" class="input-group d-flex ">
+		                                      <div class="input-group-prepend">
+		                                        <label class="input-group-text" for="inputGroupSelect03">Boton Mostrar:</label>
+		                                      </div>
+		                                      <select class="custom-select" id="inputGroupSelect03" required >
+		                                        <option selected disabled value="">Elige un estilo de boton</option>
+
+		                                      </select>
+
+		                              </div>
+
+
+
+		                              <button type="button" class="btn mt-2 btn-dark" id="submitRequest1">Guardar</button>
+
+																	<!-- Alerta busqueda -->
+																		<div id="bodyAlert1">
+																		</div>
+
+		                            </div>
+                            </div>
+
+												</div>
+
+
+
+
+    </div>
+
+
+
+		<div class="card-group d-flex justify-content-center"  id="comment_deck">
+				</div>
+
+				<!-- Pagination -->
+			<nav aria-label="Page navigation example">
+						<ul class="pagination justify-content-center" id="parentPag">
+
+
+						</ul>
+
+			</nav>
+
+
+										<!--Modal muestra comentario completo-->
+
+																																	<!--Modal de creacion comentario-->
+																									<div class="modal fade" id="ModifyCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+																												<div class="modal-dialog modal-dialog-scrollable modal-xl ">
+																													<div class="modal-content bg-dark">
+																															<div class="modal-header">
+																																<h5 class="modal-title" >	<img src="/Opiniones/img/crear_op.png" width="100" height="30" class="d-inline-block align-center" alt=" Crear Op!" loading="lazy"></h5>
+																																<h6 id="idOp" hidden></h6>
+																																	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																																		<span aria-hidden="true">&times;</span>
+																																	</button>
+																																</div>
+																														<div class="modal-body bg-dark">
+
+																																	<div class="input-group pr-0 mb-2">
+
+																																						<div class="input-group-prepend">
+
+																																						<input type="text" class="form-control mb-1" placeholder="Titulo" aria-label="titulo"  id="titulo" minlength="5" maxlength="100"  pattern="[\w...\.\s]*"  >
+																																						<div class="valid-feedback ml-2 mb-2">
+																																									Se ve bien!.
+																																							 </div>
+																																									 <div class="invalid-feedback ml-2 mb-2">
+																																												Se admiten mayusculas, minusculas y numeros, Min 5 caracteres,Max 100. No ingreses Insultos o palabras inapropiadas o Links(seras BANEADO).
+																																											</div>
+																																					</div>
+																																	</div>
+
+																																	<div class="input-group  input-group-lg">
+
+																																					<div class="input-group">
+																																						<!--	<span  class="input-group-text">minimo 200 caracteres</span> -->
+
+																																					<textarea  class="form-control" aria-label="With textarea" id="contenido" minlength="50" maxlength="2080" placeholder="Aqui redactas tu Opinion.."  ></textarea>
+																																					<div class="valid-feedback ml-2 mb-2">
+																																								Se ve bien!.
+																																						 </div>
+																																								 <div class="invalid-feedback ml-2 mb-2">
+																																											Minimo 50 caracteres,Maximo 2080.No ingreses Insultos, Links o palabras inapropiadas(seras BANEADO).
+																																										</div>
+																																										<span class="text-white mt-2" id="charsLeft"></span>
+																																					</div>
+
+																																	</div>
+
+																																		<p class="mt-2 text-left text-white">Modificar/eliminar link video:</p>
+																																				<div class="input-group mb-3">
+																																				<div class="input-group-prepend">
+																																					<span class="input-group-text" >https://youtube.com/embed/</span>
+																																				</div>
+																																				<input type="text" class="form-control" id="yt-url" >
+																																				</div>
+																																					<p class="mt-2 text-left text-white">Modificar/eliminar link imagen 1:</p>
+																																				<div class="input-group mb-3">
+																																				<div class="input-group-prepend">
+																																					<span class="input-group-text" >URL:</span>
+																																				</div>
+																																				<input type="text" class="form-control" id="img-url" >
+																																				<input maxlength="50" class="input-group-text mt-1" id="img_desc0" placeholder="Breve descripcion de tu imagen">
+																																				</div>
+																																					<p class="mt-2 text-left text-white">Modificar/eliminar link imagen 2:</p>
+																																				<div class="input-group mb-3">
+																																				<div class="input-group-prepend">
+																																					<span class="input-group-text" >URL:</span>
+																																				</div>
+																																				<input type="text" class="form-control" id="img1-url" >
+																																				<input maxlength="50" class="input-group-text mt-1" id="img_desc1" placeholder="Breve descripcion de tu imagen">
+																																				</div>
+																																					<p class="mt-2 text-left text-white">Modificar/eliminar link imagen 3:</p>
+																																				<div class="input-group mb-3">
+																																				<div class="input-group-prepend">
+																																					<span class="input-group-text" >URL:</span>
+																																				</div>
+																																				<input type="text" class="form-control" id="img2-url">
+																																				<input maxlength="50" class="input-group-text mt-1" id="img_desc2" placeholder="Breve descripcion de tu imagen">
+																																				</div>
+
+
+																																			<p class="text-left text-white">Modificar Categoria:</p>
+																																	<div class="input-group pr-5 mt-2">
+																																					<div class="input-group-prepend">
+																																						<label class="input-group-text" for="inputGroupSelect01_mod">Categoria:</label>
+																																					</div>
+																																					<select class="custom-select" id="inputGroupSelect01_mod" required >
+																																						<option selected disabled value="">Elige la categoria de tu Opinion</option>
+																																						<option value="1">Productos</option>
+																																						<option value="2">Servicios</option>
+																																						<option value="3">Politica</option>
+																																						 <option value="4">Sociedad</option>
+																																							<option value="5">Medio Ambiente</option>
+																																							 <option value="6">interes general</option>
+																																					</select>
+
+																																	</div>
+
+
+																													 </div>
+																																	<div class="modal-footer bg-dark ">
+
+
+																																				<div class="alert alert-success" id="alertOpSuccess" role="alert" >
+
+																																					</div>
+																																		<button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrarComentario" >Cerrar</button>
+																																		<button type="button" class="btn btn-primary" id="submitcomment"><img src="/Opiniones/img/opiniones_login.png" width="50" height="25" class="d-inline-block align-center" alt=" Crear Op!" loading="lazy"></button>
+
+
+																																	</div>
+
+																												</div>
+																											</div>
+																									</div>
+
+																									<!-- Modal  Rep -->
+																							<div class="modal fade" id="modalRep" tabindex="-1" aria-labelledby="modalRep" aria-hidden="true">
+																									<div class="modal-dialog">
+																												<div class="modal-content  bg-dark">
+																														<div class="modal-header">
+																															<h5 class="modal-title text-white" >Reputacion: </h5>
+																																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																																	<span aria-hidden="true">&times;</span>
+																																		</button>
+																																		</div>
+																																			<div class="modal-body">
+																																				<p class="text-left text-white " id="pointsLikesBox"> </p>
+																																				<p class="text-left text-white" id="pointsOpBox"></p>
+																																					<p class="text-left text-white" id="penalty_points"></p>
+																																				<p class="text-left text-white" id="totalPoints"></p>
+
+																																	</div>
+																																<div class="modal-footer">
+																															<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+																														</div>
+																												</div>
+																									</div>
+																							</div>
+
+
+																							<!-- Modal  Notifications -->
+																							<div class="modal fade " id="notifModal" tabindex="-1" role="dialog" aria-labelledby="notifModal" aria-hidden="true">
+																								<div class="modal-dialog modal-lg" role="document">
+																									<div class="modal-content bg-dark">
+																										<div class="modal-header">
+																												<h5 class="modal-title text-white" id="exampleModalLabel">Notificaciones</h5>
+																													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																														<span aria-hidden="true">&times;</span>
+																																</button>
+																															</div>
+																															<div class="modal-body" id="notifAlert">
+
+
+																															</div>
+																															<div class="modal-footer">
+																													<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+																													<button type="button" class="btn btn-primary" id="cleanNotif">Marcar como leidas</button>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+
+
+
+
+
+																						<footer class="footer  ">
+																								<div  class="d-flex flex-column">
+																													<span class="text-white text-center   ">Opiniones 2020 ©. Todos los derechos reservados.</span>
+																													</div>
+																								</footer>
+
+</body>
+
+</html>

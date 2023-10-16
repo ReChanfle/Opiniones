@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Opiniones - Perfil de usuario</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Modifica tu usuario en Opiniones!. Expresa tu punto de vista,
+	sin que nadie pueda censurarte. Comparte tu opinion atraves de todas
+	tus redes sociales. Sube de rango y personaliza tus opiniones con diseños exclusivos
+	Muestra al mundo tu opinion con un estilo unico y personal.  ">
+	<meta name="keywords" content="social, opinion, opiniones, puntos de vista">
+	<meta name="author" content="Sebastian Cabeza">
+	<link rel="shortcut icon" href="/img/opiniones_icono.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" href="node_modules/bootstrap/css/bootstrap.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="node_modules/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src = "js/getUsername.js"></script>
+    <script src ="js/userProfile.js"></script>
+
+	<link rel="stylesheet" href="/css/img_effects.css" type="text/css">
+	<link rel="stylesheet" href="/css/border_effects.css" type="text/css">
+
+</head>
+
+
+<body class="bg-dark">
+
+	<header>
+
+		<nav class="navbar  navbar-expand-lg navbar-light bg-secondary" >
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+				<a class="navbar-brand imagen" href="index.html"> <img src="/img/opiniones_login.png" width="90" height="40" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></a>
+
+				<form class="form-inline my-2 my-lg-0">
+					<!--<button class="btn btn-dark  btn-sm  mr-5" type="button" data-toggle="modal" data-target="#crearCommentModal" id="botonOpinion" ><img src="/Opiniones/img/crear_op.png" width="80" height="20" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></button>
+					<input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search"></input>
+					<button class="btn btn-dark my-2 btn-sm my-sm-0  " type="submit"><img src="/Opiniones/img/buscar.png" width="70" height="18" class="d-inline-block align-top" alt="Opiniones" loading="lazy"></button> -->
+
+					<div class="btn-group btn-sm  ">
+						<a class="imagen mr-4" id="badgeNotifications">
+									<img  data-toggle="modal" data-target="#notifModal" src="/img/notification-bell.png" width="16" height="16" class="d-inline-block align-center" alt="Opiniones" loading="lazy">
+								</a>
+						<button type="button" class="btn btn-dark btn-sm mr-1" data-toggle="modal" data-target="#modalRep">Rep:
+								 <span class="badge badge-light" id="scoreUser"></span>
+										</button>
+						<button class="btn btn-dark btn-sm " type="button" id="user" >Ingresar</button>
+						<button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<span class="sr-only">Toggle Dropdown</span>
+										</button>
+										<div class="dropdown-menu" id="userMenu">
+											<a class="dropdown-item" id="modalMiCuenta" href="micuenta.html">Mi cuenta</a>
+											<a class="dropdown-item" id="panelAdmin" hidden>Panel de Control</a>
+											<a class="dropdown-item" id="modalMisOpiniones" href="misopiniones.html">Mis Opiniones</a>
+											<a class="dropdown-item" id="salir">Cerrar Sesion</a>
+										</div>
+				 </div>
+				</form>
+			</div>
+		</nav>
+
+
+	</header>
+
+  <!-- Modal  Notifications -->
+  <div class="modal fade " id="notifModal" tabindex="-1" role="dialog" aria-labelledby="notifModal" aria-hidden="true">
+  	<div class="modal-dialog modal-lg" role="document">
+  		<div class="modal-content bg-dark">
+  			<div class="modal-header">
+  					<h5 class="modal-title text-white" id="exampleModalLabel">Notificaciones</h5>
+  						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  							<span aria-hidden="true">&times;</span>
+  									</button>
+  								</div>
+  								<div class="modal-body" id="notifAlert">
+
+
+  								</div>
+  								<div class="modal-footer">
+  						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+  						<button type="button" class="btn btn-primary" id="cleanNotif">Marcar como leidas</button>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+
+
+  																		<!-- Alerta busqueda -->
+  																			<div id="bodyAlert">
+  																			</div>
+
+
+
+
+  															<!--Modal de creacion comentario-->
+  							<div class="modal fade" id="crearCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  										<div class="modal-dialog modal-dialog-scrollable modal-xl ">
+  											<div class="modal-content bg-dark">
+  													<div class="modal-header">
+  														<h5 class="modal-title" >	<img src="/img/crear_op.png" width="100" height="30" class="d-inline-block align-center" alt=" Crear Op!" loading="lazy"></h5>
+  															<button type="button" class="close" id="closeModalOp" data-dismiss="modal" aria-label="Close">
+  																<span aria-hidden="true">&times;</span>
+  															</button>
+  														</div>
+  												<div class="modal-body bg-dark">
+  															<div class="input-group pr-0 mb-2">
+  																				<div class="input-group-prepend">
+  																				<input type="text" class="form-control mb-1" placeholder="Titulo" aria-label="titulo"  id="titulo" minlength="5" maxlength="100"  pattern="[\w...\.\s]*"   required >
+  																				<div class="valid-feedback ml-2 mb-2">
+  																							Se ve bien!.
+  																					 </div>
+  																							 <div class="invalid-feedback ml-2 mb-2">
+  																										Se admiten mayusculas, minusculas y numeros, Min 10 caracteres,Max 100. No ingreses Insultos o palabras inapropiadas o Links(seras BANEADO).
+  																									</div>
+  																			</div>
+  															</div>
+  															<div class="input-group  input-group-lg">
+  																			<div class="input-group">
+  																				<!--	<span  class="input-group-text">minimo 200 caracteres</span> -->
+  																  		<textarea  class="form-control" aria-label="With textarea" id="contenido" minlength="50" maxlength="2080" placeholder="Aqui redactas tu Opinion.." required ></textarea>
+  																			<div class="valid-feedback ml-2 mb-2">
+  																						Se ve bien!.
+  																				 </div>
+  																						 <div class="invalid-feedback ml-2 mb-2">
+  																									Minimo 50 caracteres,Maximo 2080.No ingreses Insultos, Links o palabras inapropiadas(seras BANEADO).
+  																								</div>
+  																								<span class="text-white mt-2" id="charsLeft"></span>
+  																			</div>
+
+  															</div>
+  															<!--<span class="text-white mt-2 mb-2 ml-3" >Video</span> -->
+  															<button class="btn btn-sm mt-2 btn-light" id="addVid">Agregar video  <img src="img/plus.png" alt="Agregar video"></button>
+  																<button class="btn btn-sm mt-2 btn-light" id="delVid">Eliminar video  <img src="img/minus.png" alt="Eliminar video"></button>
+
+  															<div class="input-group mt-2  mb-3" id="parentVid">
+  																					<div class="input-group-prepend" id="parentVid1">
+
+  																					</div>
+
+  															</div>
+
+  															<button class="btn btn-sm mt-2 btn-light " id="addImg">Agregar imagen  <img src="img/plus.png" alt="Agregar imagen" ></button>
+  																<button class="btn btn-sm mt-2 btn-light" id="delImg">Eliminar imagen  <img src="img/minus.png" alt="Eliminar imagen"></button>
+  															<div class="input-group mt-2  mb-3 d-flex flex-column " id="parentImg">
+
+
+  															</div>
+
+
+
+  															<div class="input-group pr-5 mt-2">
+  																		  <div class="input-group-prepend">
+  																		    <label class="input-group-text" for="inputGroupSelect01">Categoria:</label>
+  																		  </div>
+  																		  <select class="custom-select" id="inputGroupSelect01" required autofocus>
+  																		    <option selected disabled value="">Elige la categoria de tu Opinion</option>
+  																		    <option value="1">Productos</option>
+  																		    <option value="2">Servicios</option>
+  																		    <option value="3">Politica</option>
+  																				 <option value="4">Sociedad</option>
+  																				  <option value="5">Medio Ambiente</option>
+  																					 <option value="6">interes general</option>
+  																		  </select>
+
+  															</div>
+
+
+
+  											 </div>
+  															<div class="modal-footer bg-dark">
+  																<div class="alert alert-success" id="alertOpSuccess" role="alert">
+
+  																			</div>
+  																<button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrarComentario" >Cerrar</button>
+  																<button type="button" class="btn btn-primary" id="submitcomment"><img src="/Opiniones/img/opiniones_boton_enviar.png" width="50" height="25" class="d-inline-block align-center" alt=" Crear Op!" loading="lazy"></button>
+
+
+  															</div>
+
+  										</div>
+  									</div>
+  							</div>
+
+
+
+
+
+  		<!-- Modal  Rep -->
+  		<div class="modal fade" id="modalRep" tabindex="-1" aria-labelledby="modalRep" aria-hidden="true">
+  			<div class="modal-dialog">
+  						<div class="modal-content  bg-dark">
+  								<div class="modal-header">
+  									<h5 class="modal-title text-white" >Reputacion: </h5>
+  										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  											<span aria-hidden="true">&times;</span>
+  												</button>
+  												</div>
+  													<div class="modal-body">
+  														<p class="text-left text-white " id="pointsLikesBox"> </p>
+  														<p class="text-left text-white" id="pointsOpBox"></p>
+  															<p class="text-left text-white" id="penalty_points"></p>
+  														<p class="text-left text-white" id="totalPoints"></p>
+
+  											</div>
+  										<div class="modal-footer">
+  									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+  								</div>
+  						</div>
+  			</div>
+  		</div>
+
+
+
+
+    <div class="container mt-2">
+        <div class="main-body ">
+
+              <!-- Breadcrumb
+              <nav aria-label="breadcrumb" class="main-breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                </ol>
+              </nav>
+               Breadcrumb -->
+
+              <div class="row gutters-sm ">
+                <div class="col-md-4 mb-3 ">
+                  <div class="card bg-secondary ">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center text-white">
+                        <img id="avatar" src="/img/user_profile.png" alt="No image" class="rounded-circle" width="200">
+                        <div class="mt-3">
+                          <h4 id="username" >Username</h4>
+                          <p class="text-white mb-1" id="profesion"></p>
+                          <p class="text-white font-size-sm" id="localidad"></p>
+                          <button class="btn btn-primary" id="buttonRep"></button>
+                          <button class="btn btn-outline-primary" id="buttonOp"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 <div class="card mt-3 bg-secondary">
+                    <ul class="list-group list-group-flush ">
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap bg-secondary">
+                        <h6  class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+                        <a  id="web" class="text-white">Ir</a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap bg-secondary">
+                        <h6  class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube mr-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>Youtube</h6>
+                        <a id="youtube" class="text-white">Ir</a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap bg-secondary">
+                        <h6  class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter mr-2 icon-inline text-info"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>Twitter</h6>
+                        <a id="twitter" class="text-white">Ir</a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap bg-secondary">
+                        <h6  class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram mr-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
+                        <a id="instagram" class="text-white">Ir</a>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap bg-secondary">
+                        <h6  class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+                        <a  id="facebook" class="text-white">Ir</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              <div class="col-md-8">
+                <!--  <div class="card mb-3 bg-secondary">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Full Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          Kenneth Valdez
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          fip@jukmuh.al
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Phone</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          (239) 816-9029
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Mobile</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          (320) 380-4539
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Address</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          Bay Area, San Francisco, CA
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="row gutters-sm">
+                    <div class="col-sm-6 mb-3">
+                      <div class="card h-100 bg-secondary">
+                        <div class="card-body">
+                          <h6 class="d-flex align-items-center mb-3 text-white">Opiniones Recientes:</h6>
+													<div class="list-group" id="list_op_recent">
+
+															</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                      <div class="card h-100 bg-secondary">
+                        <div class="card-body">
+                          <h6 class="d-flex align-items-center mb-3 text-white">Logros:</h6>
+                          <small  class="text-white">Opinologo Profesional</small>
+													<small id="achivement_op_pro_level"  class="text-body "></small>
+                          <div class="progress mb-3" style="height: 10px">
+                            <div id="achivement_op_pro" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <small  class="text-white">Opinologo Compulsivo</small>
+													<small  id="achivement_op_comp_level" class="text-body text-center "></small>
+                          <div class="progress mb-3" style="height: 10px">
+                            <div id="achivement_op_comp" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <small class="text-white">Opinologo Controvertido</small>
+													<small id="achivement_contro_level"  class="text-body text-center "></small>
+                          <div class="progress mb-3" style="height: 10px">
+                            <div id="achivement_op_contro" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <small  class="text-white">Opinologo Consensuado</small>
+													<small id="achivement_op_conse_level" class="text-body text-center "></small>
+                          <div class="progress mb-3" style="height: 10px">
+                            <div id="achivement_op_conse" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+						</div>
+					</div>
+
+							<footer class="footer  ">
+									<div  class="d-flex flex-column">
+														<span class="text-white text-center   ">Opiniones 2020 ©. Todos los derechos reservados.</span>
+														</div>
+									</footer>
+</body>
+
+</html>
